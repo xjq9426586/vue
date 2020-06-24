@@ -1,20 +1,21 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <Demo></Demo>
+    <!--<Demo></Demo>-->
+    <CloudMusic></CloudMusic>
     <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
   </div>
 </template>
 
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
-import Demo from "@/components/Demo";
+//import Demo from "@/components/Demo";
+import CloudMusic from "@/components/CloudMusic";
 
 
 export default {
   name: 'App',
   components: {
-    Demo
+    CloudMusic
   }
 }
 </script>

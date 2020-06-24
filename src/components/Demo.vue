@@ -24,6 +24,8 @@
 </template>
 
 <script>
+    import Axios from 'axios'
+
     export default {
         name: 'Demo',
         data() {
@@ -49,7 +51,10 @@
         },
         methods: {
             click(){
-                alert(1)
+                let api = 'http://127.0.0.1:8060/tansun-tcp-app-pc/base/getTenantName'
+                Axios.get(api).then(res => {
+                    this.tableData = res.data.data
+                })
             }
         }
     }
