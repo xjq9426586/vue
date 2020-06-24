@@ -1,22 +1,26 @@
 <template>
-    <el-table
-            :data="tableData"
-            style="width: 100%">
-        <el-table-column
-                prop="date"
-                label="日期"
-                width="180">
-        </el-table-column>
-        <el-table-column
-                prop="name"
-                label="姓名"
-                width="180">
-        </el-table-column>
-        <el-table-column
-                prop="address"
-                label="地址">
-        </el-table-column>
-    </el-table>
+    <div>
+        <el-button @click="click()">点我？</el-button>
+        <el-table
+                :data="tableData"
+                style="width: 100%">
+            <el-table-column
+                    prop="date"
+                    label="日期"
+                    width="180">
+            </el-table-column>
+            <el-table-column
+                    prop="name"
+                    label="姓名"
+                    width="180">
+            </el-table-column>
+            <el-table-column
+                    prop="address"
+                    label="地址">
+            </el-table-column>
+        </el-table>
+    </div>
+
 </template>
 
 <script>
@@ -41,6 +45,11 @@
                     name: '王小虎',
                     address: '上海市普陀区金沙江路 1516 弄'
                 }]
+            }
+        },
+        methods: {
+            click(){
+                alert(1)
             }
         }
     }
