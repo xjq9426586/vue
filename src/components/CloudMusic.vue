@@ -51,6 +51,11 @@
                 playUrl: ""
             }
         },
+        mounted () {
+            Axios.get(api).then(res => {
+                this.tableData = res.data.playlist.tracks
+            })
+        },
         methods: {
             getHost(){
                 Axios.get(api).then(res => {

@@ -1,21 +1,24 @@
 <template>
   <div id="app">
-    <!--<Demo></Demo>-->
-    <CloudMusic></CloudMusic>
+    <Demo></Demo>
+  <!--  <CloudMusic></CloudMusic>-->
     <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
+    <!--<Test></Test>-->
   </div>
 </template>
 
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
-//import Demo from "@/components/Demo";
-import CloudMusic from "@/components/CloudMusic";
+import Demo from "@/components/Demo";
+// import CloudMusic from "@/components/CloudMusic";
 
+
+import test from "@/components/Test";
 
 export default {
   name: 'App',
   components: {
-    CloudMusic
+    Demo
   }
 }
 </script>

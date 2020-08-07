@@ -24,7 +24,7 @@
 </template>
 
 <script>
-    import Axios from 'axios'
+    import {getConfigsByProductId} from '@/api/request'
 
     export default {
         name: 'Demo',
@@ -51,8 +51,11 @@
         },
         methods: {
             click(){
-                let api = 'http://127.0.0.1:8060/tansun-tcp-app-pc/base/getTenantName'
-                Axios.get(api).then(res => {
+                // this.$axios.get('/tansun-tcp-app-pc/base/getTenantName').then(res => {
+                //         this.tableData = res.data.data
+                //     })
+
+                getConfigsByProductId().then(res => {
                     this.tableData = res.data.data
                 })
             }
