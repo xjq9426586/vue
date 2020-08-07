@@ -14,11 +14,21 @@ import Demo from "@/components/Demo";
 
 
 import test from "@/components/Test";
+import {api} from "@/api/request";
 
 export default {
   name: 'App',
   components: {
     Demo
+  },
+  created: function(){
+    localStorage.clear()
+    api.login('xyzh0038', '1').then(res => {
+      localStorage.setItem('token', res.access_token)
+    })
+  },
+  methods:{
+
   }
 }
 </script>

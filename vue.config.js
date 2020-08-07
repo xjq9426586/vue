@@ -89,13 +89,22 @@ module.exports = {
         hotOnly: false,
         // 查阅 https://github.com/vuejs/vue-docs-zh-cn/blob/master/vue-cli/cli-service.md#配置代理
         proxy: {
-            '/tansun-tcp-app-pc': {
-                target: 'http://localhost:8060',
+            '/api': {
+                target: 'http://172.19.70.8:30920/tansun-tcp-app/',
                 changeOrigin: true,
                 secure: false,
                 // ws: true,
                 pathRewrite: {
                     '^/api': ''   // 请求数据路径别名,这里是注意将static/mock放入public文件夹
+                }
+            },
+            '/auth': {
+                target: 'http://172.19.70.8:30920/auth/createToken',
+                changeOrigin: true,
+                secure: false,
+                // ws: true,
+                pathRewrite: {
+                    '^/auth': ''   // 请求数据路径别名,这里是注意将static/mock放入public文件夹
                 }
             }
         },

@@ -1,11 +1,9 @@
 import axios from 'axios'
 import { Message, Loading } from 'element-ui'
-const ConfigBaseURL = '/api' //默认路径，这里也可以使用env来判断环境
 let loadingInstance = null //这里是loading
 //使用create方法创建axios实例
 export const Service = axios.create({
     timeout: 7000, // 请求超时时间
-    baseURL: ConfigBaseURL,
     method: 'post',
     headers: {
         'Content-Type': 'application/json;charset=UTF-8'
@@ -13,7 +11,7 @@ export const Service = axios.create({
 })
 // 添加请求拦截器
 Service.interceptors.request.use(config => {
-    config.headers.token = 'eyJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE1OTY2Nzc5MjAsImlzcyI6ImdhdGV3YXkiLCJ1c2VyIjoiUGV0UGVLWUY0czEzY0F3Wm9UMzVzR09vSGpCMXU4VWpxdUg2YnErcEhacDloZi9jM2czZG8zUjloOWw0WFk2WEFqYjdDeE9ESitCRnlSZVdEamxDU2lMaHpsVnAxNisyaVJKMXF0NnE2a2cwMUZrbXVraHEzWEtUZWhjS3RuQVNXODQyZFhSemM4SWJwQ3IyRzh6aThxU1NjUWNsdWtoaiIsImlhdCI6MTU5NjY3NzkyMH0.8jrhxRsFrfGWgQILFfnZ2EiCLALpaq-ifoWGP4Hcrrk'
+    config.headers.token = localStorage.getItem('token') || ''
     loadingInstance = Loading.service({
         lock: true,
         text: 'loading...'

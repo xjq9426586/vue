@@ -24,7 +24,7 @@
 </template>
 
 <script>
-    import {getConfigsByProductId} from '@/api/request'
+    import {api} from '@/api/request'
 
     export default {
         name: 'Demo',
@@ -55,7 +55,7 @@
                 //         this.tableData = res.data.data
                 //     })
 
-                getConfigsByProductId().then(res => {
+                api.cust().then(res => {
                     this.tableData = res.data.data
                 })
             }
